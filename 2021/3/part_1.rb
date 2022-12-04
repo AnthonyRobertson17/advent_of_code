@@ -1,6 +1,6 @@
 tally = nil
 File.readlines("input.txt", chomp: true).each do |line|
-  tally = Array.new(line.length, 0)
+  tally = Array.new(line.length, 0) if tally.nil?
   line.chars.each_with_index do |bit, i|
     if bit == "0"
       tally[i] -= 1
