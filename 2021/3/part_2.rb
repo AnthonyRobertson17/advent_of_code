@@ -1,27 +1,36 @@
-tally = nil
-File.readlines("input.txt", chomp: true).each do |line|
-  tally = Array.new(line.length, 0) if tally.nil?
-  line.chars.each_with_index do |bit, i|
-    if bit == "0"
-      tally[i] -= 1
+def most_common(lines, index)
+  tally(lines, index).negative? ? "0" : "1"
+end
+
+def least_common(lines, index)
+  tally(lines, index).negative? ? "1" : "0"
+end
+
+def tally(lines, index)
+  t = 0
+  lines.each do |l|
+    if l[index] == "0"
+      t -= 1
     else
-      tally[i] += 1
+      t += 1
     end
   end
+  t
 end
 
-gamma = ""
-epsilon = ""
+lines = File.readlines("input.txt", chomp: true)
+lines.map(&:chars)
 
-tally.each do |count|
-  if count.positive?
-    gamma += "1"
-    epsilon += "0"
-  else
-    gamma += "0"
-    epsilon += "1"
-  end
+i = 0
+olines = lines
+while olines.size > 1
+  c = most_common(olines, i)
+  olines.keep_if { |l| l[i] == c }
+
+  i += 1
 end
+
+
 
 gamma = gamma.to_i(2)
 epsilon = epsilon.to_i(2)
