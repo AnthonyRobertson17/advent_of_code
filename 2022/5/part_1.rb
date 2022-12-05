@@ -1,10 +1,10 @@
 def parse_input(lines)
   stack_count = 0
-  stack_defs = []
+  stack_input = []
   instructions = []
   lines.each do |line|
     if line.include?("[")
-      stack_defs.append(line)
+      stack_input.append(line)
     elsif line.split[0] == "1"
       stack_count = line.split.last.to_i
     elsif !line.empty?
@@ -13,9 +13,9 @@ def parse_input(lines)
   end
 
   stacks = Array.new(stack_count) { [] }
-  stack_defs.reverse!
-  stack_defs.each do |d|
-    d.chars.each_with_index do |c, i|
+  stack_input.reverse!
+  stack_input.each do |s|
+    s.chars.each_with_index do |c, i|
       unless "[] ".include?(c)
         stacks[(i - 1) / 4].push(c)
       end
