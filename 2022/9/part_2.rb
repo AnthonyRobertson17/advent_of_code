@@ -81,30 +81,6 @@ module Day9
       y = @positions[9][:y]
       @grid[y][x] = 1
     end
-
-    def print_grid
-      puts("==============================")
-      @grid.each { |row| puts(row.join) }
-      puts("==============================")
-    end
-
-    def print_positions
-      puts("==============================")
-      @grid.each_with_index do |row, y|
-        to_print = ""
-        row.each_index do |x|
-          if @hy == y && @hx == x
-            to_print += "H"
-          elsif @ty == y && @tx == x
-            to_print += "T"
-          else
-            to_print += "."
-          end
-        end
-        puts(to_print)
-      end
-      puts("==============================")
-    end
   end
 end
 
