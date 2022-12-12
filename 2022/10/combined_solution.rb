@@ -1,3 +1,5 @@
+require "../../helpers"
+
 module Day10
   class Instruction
     def initialize(remaining_cycles)
@@ -135,8 +137,4 @@ module Day10
   end
 end
 
-puts("sample.txt")
-Day10::Solver.new("sample.txt").solve
-puts("")
-puts("input.txt")
-Day10::Solver.new("input.txt").solve
+run(Day10::Solver)
