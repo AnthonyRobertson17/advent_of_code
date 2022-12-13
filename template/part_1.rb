@@ -12,4 +12,4 @@ module DayX
   end
 end
 
-solve(DayX::Solver)
+run(DayX::Solver)
