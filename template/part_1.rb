@@ -12,4 +12,6 @@ module DayX
   end
 end
 
-run(DayX::Solver)
+sample(DayX::Solver)
+# run(DayX::Solver)
+# test(DayX::Solver)
