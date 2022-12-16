@@ -6,7 +6,7 @@ module Day14
   Coordinate = Struct.new(:y, :x)
 
   AIR = "⬛"
-  ROCK = "🟥"
+  ROCK = "⬜"
   SAND = "🟫"
   OVERFLOW_SAND = "🟩"
   SAND_POUR_INDICATOR = "🪣"
@@ -27,12 +27,6 @@ module Day14
       y_step = end_coordinate.y <=> start_coordinate.y
       i = start_coordinate
 
-      # puts(start_coordinate)
-      # puts(end_coordinate)
-      # puts(x_step)
-      # puts(y_step)
-      # puts(i)
-
       loop do
         grid[i.y][i.x] = ROCK
         break if i == end_coordinate
@@ -43,12 +37,12 @@ module Day14
     end
 
     def draw
-      # puts `clear`
+      puts `clear`
       puts(("⬛" * (500 - x_offset)) + SAND_POUR_INDICATOR)
       grid.each do |row|
         puts(row.join)
       end
-      sleep(0.05)
+      sleep(0.1)
     end
 
     def pour_sand
@@ -132,7 +126,6 @@ module Day14
     end
 
     def solve
-      cave.draw
       cave.pour_sand
       puts(cave.sand_units)
     end
@@ -164,5 +157,5 @@ module Day14
 end
 
 sample(Day14::Solver)
-# run(Day14::Solver)
+run(Day14::Solver)
 # test(Day14::Solver)
