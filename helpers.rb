@@ -13,6 +13,12 @@ def sample(clazz, *args)
   clazz.new("sample.txt").solve(*args)
 end
 
+def sample2(clazz, *args)
+  puts("===================")
+  puts("sample2.txt")
+  clazz.new("sample2.txt").solve(*args)
+end
+
 def test(clazz, *args)
   puts("===================")
   puts("test.txt")
