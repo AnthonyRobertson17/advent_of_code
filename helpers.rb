@@ -4,23 +4,35 @@ require "prettyprint"
 def run(clazz, *args)
   puts("===================")
   puts("input.txt")
-  clazz.new("input.txt").solve(*args)
+  puts(clazz.new("input.txt").solve(*args))
 end
 
 def sample(clazz, *args)
   puts("===================")
   puts("sample.txt")
-  clazz.new("sample.txt").solve(*args)
+  puts(clazz.new("sample.txt").solve(*args))
 end
 
 def sample2(clazz, *args)
   puts("===================")
   puts("sample2.txt")
-  clazz.new("sample2.txt").solve(*args)
+  puts(clazz.new("sample2.txt").solve(*args))
 end
 
 def test(clazz, *args)
   puts("===================")
   puts("test.txt")
-  clazz.new("test.txt").solve(*args)
+  puts(clazz.new("test.txt").solve(*args))
+end
+
+class String
+  def split_strip(value)
+    split(value).map(&:strip)
+  end
+end
+
+class Array
+  def map_to(clazz)
+    map { |x| clazz.new(x) }
+  end
 end

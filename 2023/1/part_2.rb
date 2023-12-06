@@ -3,20 +3,12 @@ require "debug"
 
 module Day1
   class Solver
-
-
-
     def initialize(file)
       @lines = File.readlines(file, chomp: true)
     end
 
     def solve
-      total = 0
-      @lines.each do |line|
-        value = calibration_value(line:)
-        total += value
-      end
-      puts(total)
+      @lines.sum { |line| calibration_value(line:) }
     end
 
     def calibration_value(line:)

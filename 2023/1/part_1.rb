@@ -8,11 +8,7 @@ module Day1
     end
 
     def solve
-      total = 0
-      @lines.each do |line|
-        total += calibration_value(line:)
-      end
-      puts(total)
+      @lines.sum { |line| calibration_value(line:) }
     end
 
     def calibration_value(line:)
