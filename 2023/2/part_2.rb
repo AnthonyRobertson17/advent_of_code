@@ -1,7 +1,7 @@
 require "debug"
 require "../../helpers"
 
-module DayX
+module Day2
   class Turn
     attr_accessor :red, :green, :blue
 
