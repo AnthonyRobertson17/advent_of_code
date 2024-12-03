@@ -1,5 +1,5 @@
 require "debug"
-require "../../helpers"
+require_relative "../helpers"
 
 module Day2
   class Solver
@@ -47,7 +47,3 @@ module Day2
     end
   end
 end
-
-# sample(Day2::Solver)
-run(Day2::Solver)
-# test(Day2::Solver)

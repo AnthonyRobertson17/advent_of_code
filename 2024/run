@@ -1,0 +1,26 @@
+#!/Users/anthonyrobertson/.rbenv/shims/ruby
+
+puts __FILE__
+
+day = ARGV.shift
+part = ARGV.shift
+command = ARGV.shift
+
+require_relative "#{day}/part_#{part}"
+
+solver = Object.const_get("Day#{day}::Solver")
+
+file = "#{day}/"
+file += if command.nil?
+          "input.txt"
+        elsif command.include?("s")
+          "sample.txt"
+        elsif command.include?("t")
+          "test.txt"
+        else
+          "input.txt"
+        end
+
+puts("===================")
+puts(file)
+puts(solver.new(file).solve)
