@@ -1,7 +1,5 @@
 #!/Users/anthonyrobertson/.rbenv/shims/ruby
 
-puts __FILE__
-
 day = ARGV.shift
 part = ARGV.shift
 command = ARGV.shift
@@ -21,6 +19,4 @@ file += if command.nil?
           "input.txt"
         end
 
-puts("===================")
-puts(file)
 puts(solver.new(file).solve)

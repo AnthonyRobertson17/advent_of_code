@@ -65,16 +65,11 @@ module Day3
         break if matcher.nil?
 
         if matcher.do?
-          puts "ENABLED #{matcher.match} @ #{matcher.position}"
           @enabled = true
         elsif matcher.dont?
-          puts "DISABLED #{matcher.match} @ #{matcher.position}"
           @enabled = false
         elsif @enabled
-          puts "ADDED #{matcher.match} @ #{matcher.position}"
           matches << matcher.match
-        else
-          puts "IGNORED #{matcher.match} @ #{matcher.position}"
         end
 
         matcher.next_match
