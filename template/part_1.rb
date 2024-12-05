@@ -1,5 +1,5 @@
 require "debug"
-require "../../helpers"
+require "../helpers"
 
 module DayX
   class Solver
@@ -12,7 +12,3 @@ module DayX
     end
   end
 end
-
-sample(DayX::Solver)
-# run(DayX::Solver)
-# test(DayX::Solver)
