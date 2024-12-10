@@ -1,5 +1,5 @@
 require "debug"
-require "../helpers"
+require_relative "../helpers"
 
 module Day5
   class Update

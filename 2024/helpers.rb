@@ -11,4 +11,10 @@ class Array
   def map_to(clazz)
     map { |x| clazz.new(x) }
   end
+
+  def print_2d(s = "")
+    puts "============================"
+    each { |e| puts(e.join(s)) }
+    puts "============================"
+  end
 end
